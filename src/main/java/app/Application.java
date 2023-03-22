@@ -3,6 +3,7 @@ package app;
 import app.config.AppConfig;
 import app.model.AnimalsCage;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Application {
@@ -15,6 +16,8 @@ public class Application {
                     applicationContext.getBean(AnimalsCage.class);
             bean.whatAnimalSay();
         }
+        ((ConfigurableApplicationContext)applicationContext).close();
+
     }
 
 }
